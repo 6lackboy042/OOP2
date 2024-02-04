@@ -1,9 +1,39 @@
-Where Abstractions are Used:
+# Animal Classification System
 
-Abstract Classes (Person and Content): The Person class abstracts the common properties and behavior of both instructors and students, promoting code reusability. Similarly, the Content class abstracts the common features of courses and assignments, allowing for a unified approach to handling content in the LMS.
+This is a basic implementation of an animal classification system using JavaScript. The code utilizes object-oriented programming concepts such as classes, inheritance, and encapsulation to represent different categories of animals within the Animalia kingdom.
 
-Inheritance (User, Student, Course, and Assignment): Inheritance is used to model the "is-a" relationship. For example, a Student is a specialized form of a User, and a Course is a specialized form of Content. This enhances code organization and readability.
+## Classes Overview
 
-Polymorphism: The showDetails method is defined in both Person and Content classes, and it is overridden in the subclasses (User, Student, Course, and Assignment). This demonstrates polymorphism, allowing different objects to be treated uniformly when displaying their details.
+- `KingdomAnimalia`: The base class representing the overall animal classification.
+- `HasBackbone` and `NoBackbone`: Subclasses indicating whether an animal has a backbone or not.
+- Specific subclasses for different categories of animals:
+  - `Arthropoda`: Arthropods without a backbone.
+  - `Fish`: Fish with a backbone.
+  - `Amphibia`: Amphibians with a backbone.
+  - `Reptile`: Reptiles with a backbone.
+  - `AVES`: Birds with a backbone.
+  - `Mammal`: Mammals with a backbone.
 
-By introducing these abstractions, the code becomes more modular and extensible, making it easier to add new functionalities or adapt to future changes in the LMS requirements.
+## Usage
+
+Instantiate objects from the provided subclasses and explore the animal classification system. Each subclass has methods to describe itself and list examples of animals within the category.
+
+```javascript
+// Instantiate objects from the child/sub classes above.
+const arthropods = new Arthropoda('Arthropods');
+const fish = new Fish('Fish');
+const amphibians = new Amphibia('Amphibians');
+const reptiles = new Reptile('Reptiles');
+const birds = new AVES('Birds');
+const mammals = new Mammal('Mammals');
+const animalClasses = [arthropods, fish, amphibians, reptiles, birds, mammals];
+
+// Display classification for Kingdom Animalia.
+console.log('Here is a simple classification for Kingdom Animalia:');
+console.log(animalClasses);
+
+// Utilize the methods below to retrieve the attributes of any class.
+mammals.selfDescription();
+
+// Utilize the methods below to get examples of animals under any class.
+mammals.listAnimals();
